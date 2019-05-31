@@ -1,5 +1,6 @@
 # Protecting access to NGINX via Azure Active Directory
 This sample uses *nginx* and *oauth2_proxy* to provide secure access to nginx.
+Everything is hosted in docker containers which are linked via *docker-compose*.
 
 # Run this sample
 
