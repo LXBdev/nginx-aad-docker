@@ -1,0 +1,3 @@
+export OAUTH2_PROXY_CLIENT_ID="00000000-0000-0000-0000-000000000000"
+export OAUTH2_PROXY_AZURE_TENANT="yourtenant.onmicrosoft.com"
+export OAUTH2_PROXY_CLIENT_SECRET="crypticSecretValue"

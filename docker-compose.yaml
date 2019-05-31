@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  nginx:
+    image: nginx-aad
+    ports:
+      - "80:80"
+  oauth2_proxy:
+    image: machinedata/oauth2_proxy
+    ports:
+      - "4180:4180"
+    #volumes:
+        #  - ./oauth2_proxy.cfg:/conf/oauth2_proxy.cfg:ro
+        #  - ./templates:/templates
+    environment:
+      OAUTH2_PROXY_UPSTREAM: "http://localhost"
+      OAUTH2_PROXY_PROVIDER: "azure"
+      OAUTH2_PROXY_CLIENT_ID: "${OAUTH2_PROXY_CLIENT_ID}"
+      OAUTH2_PROXY_CLIENT_SECRET: "${OAUTH2_PROXY_CLIENT_SECRET}"
+      OAUTH2_PROXY_AZURE_TENANT: "${OAUTH2_PROXY_AZURE_TENANT}"
+      OAUTH2_PROXY_COOKIE_SECURE: "false"
+      OAUTH2_PROXY_COOKIE_EXPIRE: "0h15m0s"
+      # OAUTH2_PROXY_REDIRECT_URL: "http://localhost:4180"
