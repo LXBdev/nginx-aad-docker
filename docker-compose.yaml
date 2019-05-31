@@ -2,9 +2,12 @@ version: '2'
 
 services:
   nginx:
-    image: nginx-aad
+    image: nginx:alpine
     ports:
       - "80:80"
+    volumes:
+      - ./localhost.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./www:/data/www:ro
   oauth2_proxy:
     image: machinedata/oauth2_proxy
     ports:

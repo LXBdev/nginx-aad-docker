@@ -11,14 +11,5 @@ Everything is hosted in docker containers which are linked via *docker-compose*.
    - `run_linux.sh` (linux environments)
    - `run_windows.cmd` (windows environments)
 
-# Note for linux users
-You don't need the Dockerfile for the *nginx-aad* container - you can also just mount the configuration file directly. I used a dockerfile because of some issues with Docker for Windows.
-
-```yaml
-  nginx:
-    image: nginx:alpine
-    ports:
-      - "80:80"
-    volumes:
-      - ./localhost.conf:/etc/nginx/conf.d/default.conf:ro
-```
+# Windows Subsystem for Linux
+If you have file access issues when using WSL and running the docker-compose, you can use the provided `Dockerfile` instead of mounting the volume.
