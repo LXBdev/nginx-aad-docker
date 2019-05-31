@@ -10,6 +10,3 @@ Everything is hosted in docker containers which are linked via *docker-compose*.
 2. Execute the given scripts
    - `run_linux.sh` (linux environments)
    - `run_windows.cmd` (windows environments)
-
-# Windows Subsystem for Linux
-If you have file access issues when using WSL and running the docker-compose, you can use the provided `Dockerfile` instead of mounting the volume.
